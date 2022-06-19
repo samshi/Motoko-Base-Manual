@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+      table {
+          margin: 0 20px;
+          border-collapse: collapse;
+          border-spacing: 1px;
+      }
+
+      td, th {
+          border: 1px solid #ccc;
+          padding: 1px 5px;
+      }
+
+      th {
+          /*border-bottom: 1px solid #666;*/
+      }
+
+      pre {
+          width: 90%;
+          background: #eee;
+          padding: 10px;
+          font-family: monospace;
+          font-size: 18px;
+          overflow: scroll;
+          max-height: 300px;
+      }
+      button{
+          margin-left:10px;
+      }
+  </style>
+  <script>
+    var modules = {}
+    var demos   = {}
+  </script>
+  <script src="myjq.js"></script>
+  <script src="modules/Array.js"></script>
+  <script src="modules/AssocList.js"></script>
+  <script src="modules/Blob.js"></script>
+  <script src="modules/Bool.js"></script>
+  <script src="modules/Buffer.js"></script>
+  <script src="modules/CertifiedData.js"></script>
+  <script src="modules/Char.js"></script>
+  <script src="modules/Debug.js"></script>
+  <script src="modules/Deque.js"></script>
+  <script src="modules/Error.js"></script>
+  <script src="modules/ExperimentalCycles.js"></script>
+  <script src="modules/ExperimentalInternetComputer.js"></script>
+  <script src="modules/ExperimentalStableMemory.js"></script>
+  <script src="modules/Float.js"></script>
+  <script src="modules/Func.js"></script>
+  <script src="modules/Hash.js"></script>
+  <script src="modules/HashMap.js"></script>
+  <script src="modules/Heap.js"></script>
+  <script src="modules/Int.js"></script>
+  <script src="modules/Int16.js"></script>
+  <script src="modules/Int32.js"></script>
+  <script src="modules/Int64.js"></script>
+  <script src="modules/Int8.js"></script>
+  <script src="modules/Iter.js"></script>
+  <script src="modules/IterType.js"></script>
+  <script src="modules/List.js"></script>
+  <script src="modules/Nat.js"></script>
+  <script src="modules/Nat16.js"></script>
+  <script src="modules/Nat32.js"></script>
+  <script src="modules/Nat64.js"></script>
+  <script src="modules/Nat8.js"></script>
+  <script src="modules/None.js"></script>
+  <script src="modules/Option.js"></script>
+  <script src="modules/Order.js"></script>
+  <script src="modules/Prelude.js"></script>
+  <script src="modules/Principal.js"></script>
+  <script src="modules/RBTree.js"></script>
+  <script src="modules/Random.js"></script>
+  <script src="modules/Result.js"></script>
+  <script src="modules/Stack.js"></script>
+  <script src="modules/Text.js"></script>
+  <script src="modules/Time.js"></script>
+  <script src="modules/Trie.js"></script>
+  <script src="modules/TrieMap.js"></script>
+  <script src="modules/TrieSet.js"></script>
+
+  <script src="demos/Array.js"></script>
+</head>
+<body>
+<div id="import_page"></div>
+</body>
+</html>
+<script>
+  var pages_list  = [
+    'base_module_function', 'base_module_import', // 'cycle_caculator_page',
+  ]
+  var pages       = {}
+  var status_data = {}
+
+  var dependent = {}
+  for(let module in modules){
+    for(let import_from in modules[module].imports){
+      if(!dependent[import_from]){
+        dependent[import_from] = {}
+      }
+
+      dependent[import_from][module] = modules[module].imports[import_from]
+    }
+  }
+
+  $(_ => {
+    window.IW = $.IW()
+    window.IH = $.IH()
+    createPages()
+    createModulePage()
+    createImportPage()
+
+    selectPage(pages_list[0])
+  })
+  // console.log(dependent)
+  // console.log(modules)
+
+  function createPages(){
+    pages_list.map((page, index) => {
+      $.C($.body, {
+        id: page,
+        L : 50 + index * 250,
+        T : 20,
+        W : 160,
+        I : page
+      }, 'button').down(eobj => {
+        selectPage(eobj.ID_)
+      })
+
+      pages[page] = $.C($.body, {
+        id: page,
+        L : 20,
+        T : 50,
+        W : IW - 40,
+        H : IH - 70,
+        O : 'scroll'
+      }).H()
+    })
+  }
+
+  function createModulePage(){
+    window.modules_list_node = $.C(pages[pages_list[0]], {
+      L: 20,
+      T: 20
+    })
+
+    window.functions_list_node = $.C(pages[pages_list[0]], {
+      L: 270,
+      T: 20
+    })
+
+    window.functions_detail_node = $.C(pages[pages_list[0]], {
+      L: 450,
+      T: 0
+    })
+
+    for(let module in modules){
+      $.c(modules_list_node, {
+        id: module,
+        I : module,
+        CS: 'pointer',
+      }).down(eobj => {
+        status_data.module = eobj.I_
+        modules_list_node.CHILDREN.map(module_eobj => {
+          module_eobj.S({
+            color: module_eobj == eobj ? 'red' : ''
+          })
+        })
+
+        showFunctions(eobj.I_)
+
+      })
+    }
+  }
+
+  function showFunctions(module){
+    var s = ''
+    for(let func in modules[module].functions){
+      let color = func == status_data.function ? 'red' : ''
+      s += '<div onclick="selectFunction(this)" style="color:' + color + '">'
+      s += func
+      s += '</div>'
+    }
+
+    functions_list_node.I(s)
+  }
+
+  function selectFunction(node){
+    status_data.function = node.innerText
+    showFunctions(status_data.module)
+
+    showDetail()
+  }
+
+  function showDetail(){
+    let module = status_data.module
+    let func   = status_data.function
+    let s      = ''
+
+    s += '<h3>' + func + ' desc</h3>'
+    s += '<pre>' + modules[module].functions[func].desc + '</pre>'
+
+    s += '<h3>' + func + ' code</h3>'
+    s += '<pre>' + modules[module].functions[func].body + '</pre>'
+
+    let source = modules[module].test
+    let hl     = highLight(source, func)
+    let hl_btn = ''
+    if(hl.length){
+      hl.map(n => {
+        hl_btn += '<button onclick="myTop('+n+')">' + (n+1) + '</button>'
+      })
+      console.log(hl_btn)
+    }
+    s += '<h3>test ' + hl_btn + '</h3>'
+    s += '<pre id="test">' + addLine(source) + '</pre>'
+
+    s += '<h3>' + module + ' import</h3>'
+    for(let import_str in modules[module].imports){
+      s += '<div>import ' + modules[module].imports[import_str] + ' "' + import_str + '"</div>'
+    }
+    s += '<h3>related</h3>'
+    s += '<pre>' + modules[module].other + '</pre>'
+
+    functions_detail_node.I(s)
+
+    if(hl.length){
+      myTop(hl[0])
+    }
+  }
+
+  function myTop(top){
+    // setTimeout(function(top){
+    //   return function(){
+        $('#test', 1).context.scrollTop = top * 20
+      // }
+    // }(top), 100)
+  }
+
+  function createImportPage(){
+    let import_from_arr = Object.keys(dependent).sort((a, b) => {
+      let len1 = Object.keys(dependent[a]).length
+      let len2 = Object.keys(dependent[b]).length
+      return len2 - len1
+    })
+    let import_from_len = import_from_arr.length
+    let s               = '<table>'
+    s += '<tr>'
+    s += '<th>module</th>'
+    s += '<th>import</th>'
+    s += '<th>imported</th>'
+    s += '<th>' + import_from_arr.join('</th><th>') + '</th>'
+    s += '</tr>'
+    for(let module in modules){
+      s += '<tr>'
+      s += '<td>' + module + '</td>'
+      s += '<td>' + (Object.keys(modules[module].imports).length || '') + '</td>'
+      s += '<td>' + (dependent[module] ? Object.keys(dependent[module]).length : '') + '</td>'
+      for(let i = 0; i < import_from_len; i++){
+        s += '<td>' + (dependent[import_from_arr[i]][module] || '') + '</td>'
+      }
+      s += '</tr>'
+    }
+    s += '<table>'
+
+    pages.base_module_import.I(s)
+  }
+
+  function selectPage(page){
+    for(let _page in pages){
+      pages[_page].V(_page == page)
+    }
+  }
+
+  function highLight(source, func){
+    let str      = source
+    let position = []
+    let index
+    while(index = str.indexOf(func)){
+      if(index == -1){
+        break
+      }
+
+      let line = str.slice(0, index).split(/\n/).length-1
+
+      if(line){
+        if(position.length){
+          line += position[position.length - 1]
+        }
+        position.push(line)
+      }
+
+      str = str.slice(index + func.length)
+    }
+
+    return position
+  }
+
+  function addLine(source){
+    let a = source.split(/\n/)
+    if(a.length>1){
+      a     = a.map((line, index) => {
+        index++
+        let blank = ' |'
+        if(index < 10){
+          blank = '   |'
+        }
+        else if(index < 100){
+          blank = '  |'
+        }
+        return index + blank + line
+      })
+    }
+    else{
+      a = ['no text code']
+    }
+
+    return a.join('\n')
+  }
+</script>
+
+
+
+

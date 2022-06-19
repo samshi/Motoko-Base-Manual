@@ -1,0 +1,1 @@
+modules.IterType={"imports":{},"functions":{},"other":"public type Iter<T> = { next : () -> ?T };","test":""}
