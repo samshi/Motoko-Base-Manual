@@ -214,7 +214,6 @@
       hl.map(n => {
         hl_btn += '<button onclick="myTop('+n+')">' + (n+1) + '</button>'
       })
-      console.log(hl_btn)
     }
     s += '<h3>test ' + hl_btn + '</h3>'
     s += '<pre id="test">' + addLine(source) + '</pre>'
@@ -279,13 +278,15 @@
   function highLight(source, func){
     let str      = source
     let position = []
-    let index
-    while(index = str.indexOf(func)){
-      if(index == -1){
+    let find
+    let reg = new RegExp(`[^\\w]`+func+`[^\\w]`)
+    while(true){
+      find = str.match(reg)
+      if(!find){
         break
       }
 
-      let line = str.slice(0, index).split(/\n/).length-1
+      let line = str.slice(0, find.index).split(/\n/).length-1
 
       if(line){
         if(position.length){
@@ -294,7 +295,7 @@
         position.push(line)
       }
 
-      str = str.slice(index + func.length)
+      str = str.slice(find.index+1+func.length)
     }
 
     return position
