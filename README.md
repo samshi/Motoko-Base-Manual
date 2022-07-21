@@ -5,7 +5,7 @@ xxx/motoko-base
 
 install git@github.com:samshi/Motoko-Base-Manual.git at
 
-xxx/Motoko-Base-Manual
+xxx/motoco-base-manual
 
 xxx: node app.js
 

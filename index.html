@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style>
-      h1{
-          text-align:center;
-          margin-top:5px;
+      h1 {
+          text-align: center;
+          margin-top: 5px;
       }
+
       table {
           margin: 0 20px;
           border-collapse: collapse;
@@ -24,7 +25,7 @@
       }
 
       pre {
-          width: 90%;
+          width: 70%;
           background: #eee;
           padding: 10px;
           font-family: monospace;
@@ -32,8 +33,21 @@
           overflow: scroll;
           max-height: 300px;
       }
-      button{
-          margin-left:10px;
+
+      button {
+          margin-left: 10px;
+      }
+
+      input {
+          width: 30%;
+          font-size: 14px;
+          margin-bottom: 10px;
+      }
+
+      textarea {
+          width: 70%;
+          height: 200px;
+          font-size: 14px;
       }
   </style>
   <script>
@@ -91,7 +105,7 @@
 </head>
 <body>
 <h1>
-  Motoco Base Manual
+  Motoko Base Manual
 </h1>
 <div id="import_page"></div>
 </body>
@@ -152,17 +166,23 @@
   function createModulePage(){
     window.modules_list_node = $.C(pages[pages_list[0]], {
       L: 20,
-      T: 20
+      T: 20,
+      H: IH - 100,
+      O: 'auto'
     })
 
     window.functions_list_node = $.C(pages[pages_list[0]], {
       L: 270,
-      T: 20
+      T: 20,
+      H: IH - 100,
+      O: 'auto'
     })
 
     window.functions_detail_node = $.C(pages[pages_list[0]], {
       L: 450,
-      T: 0
+      T: 0,
+      H: IH - 70,
+      O: 'auto'
     })
 
     for(let module in modules){
@@ -204,46 +224,60 @@
   }
 
   function showDetail(){
-    let module = status_data.module
-    let func   = status_data.function
-    let s      = ''
+    window.module = status_data.module
+    window.func   = status_data.function
+    $.get('getsamples.php', {
+      module,
+      func
+    }, res => {
 
-    s += '<h3>' + func + ' desc</h3>'
-    s += '<pre>' + modules[module].functions[func].desc + '</pre>'
+      let s = ''
 
-    s += '<h3>' + func + ' code</h3>'
-    s += '<pre>' + modules[module].functions[func].body + '</pre>'
+      s += '<h3>' + func + ' desc</h3>'
+      s += '<pre>' + modules[module].functions[func].desc + '</pre>'
 
-    let source = modules[module].test
-    let hl     = highLight(source, func)
-    let hl_btn = ''
-    if(hl.length){
-      hl.map(n => {
-        hl_btn += '<button onclick="myTop('+n+')">' + (n+1) + '</button>'
-      })
-    }
-    s += '<h3>test ' + hl_btn + '</h3>'
-    s += '<pre id="test">' + addLine(source) + '</pre>'
+      s += '<h3>' + func + ' code</h3>'
+      s += '<pre>' + modules[module].functions[func].body + '</pre>'
 
-    s += '<h3>' + module + ' import</h3>'
-    for(let import_str in modules[module].imports){
-      s += '<div>import ' + modules[module].imports[import_str] + ' "' + import_str + '"</div>'
-    }
-    s += '<h3>related</h3>'
-    s += '<pre>' + modules[module].other + '</pre>'
+      let source = modules[module].test
+      let hl     = highLight(source, func)
+      let hl_btn = ''
+      if(hl.length){
+        hl.map(n => {
+          hl_btn += '<button onclick="myTop(' + n + ')">' + (n + 1) + '</button>'
+        })
+      }
+      s += '<h3>test ' + hl_btn + '</h3>'
+      s += '<pre id="test">' + addLine(source) + '</pre>'
 
-    functions_detail_node.I(s)
+      s += '<h3>' + module + ' import</h3>'
+      for(let import_str in modules[module].imports){
+        s += '<div>import ' + modules[module].imports[import_str] + ' "' + import_str + '"</div>'
+      }
+      s += '<h3>related</h3>'
+      s += '<pre>' + modules[module].other + '</pre>'
 
-    if(hl.length){
-      myTop(hl[0])
-    }
+      s += '<h3>add your sample <button onclick="addSample(this)">add</button></h3>'
+      s += '<input id="myname" placeholder="your name" value="' + (localStorage.myname || '') + '"/><br>'
+      s += '<textarea id="mysample"></textarea>'
+
+      s += '<h3>samples</h3>'
+      s += '<pre id="samples">' + res + '</pre>'
+
+      functions_detail_node.I(s)
+
+      if(hl.length){
+        myTop(hl[0])
+      }
+    })
+
   }
 
   function myTop(top){
     // setTimeout(function(top){
     //   return function(){
-        $('#test', 1).context.scrollTop = top * 20
-      // }
+    $('#test', 1).context.scrollTop = top * 20
+    // }
     // }(top), 100)
   }
 
@@ -286,14 +320,14 @@
     let str      = source
     let position = []
     let find
-    let reg = new RegExp(`[^\\w]`+func+`[^\\w]`)
+    let reg      = new RegExp(`[^\\w]` + func + `[^\\w]`)
     while(true){
       find = str.match(reg)
       if(!find){
         break
       }
 
-      let line = str.slice(0, find.index).split(/\n/).length-1
+      let line = str.slice(0, find.index).split(/\n/).length - 1
 
       if(line){
         if(position.length){
@@ -302,7 +336,7 @@
         position.push(line)
       }
 
-      str = str.slice(find.index+1+func.length)
+      str = str.slice(find.index + 1 + func.length)
     }
 
     return position
@@ -310,8 +344,8 @@
 
   function addLine(source){
     let a = source.split(/\n/)
-    if(a.length>1){
-      a     = a.map((line, index) => {
+    if(a.length > 1){
+      a = a.map((line, index) => {
         index++
         let blank = ' |'
         if(index < 10){
@@ -328,6 +362,25 @@
     }
 
     return a.join('\n')
+  }
+
+  function addSample(node){
+    let myname   = document.getElementById('myname').value
+    let mysample = document.getElementById('mysample').value
+    console.log(window.module, window.func, myname, mysample)
+    if(myname){
+      localStorage.myname = myname
+    }
+    $.post('setsample.php', {
+      module,
+      func,
+      name  : encodeURIComponent(myname),
+      sample: encodeURIComponent(mysample)
+    }, res=>{
+      console.log('setsample res', res)
+      showDetail()
+    })
+
   }
 </script>
 
