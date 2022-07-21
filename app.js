@@ -3,7 +3,7 @@ let fs   = require("fs");
 var path = require('path');
 var exec = require('child_process').exec;
 
-const root = "../base"
+const root = "../motoko-base"
 const src_dir = root+'/src'
 const test_dir = root+'/test'
 let modules_list   = fs.readdirSync(src_dir);
