@@ -1,12 +1,11 @@
 # Motoko-Base-Manual
 
-install git@github.com:dfinity/motoko-base.git at
-xxx/motoko-base
+install php
 
-install git@github.com:samshi/Motoko-Base-Manual.git at
+install git@github.com:dfinity/motoko-base.git at xxx/motoko-base
 
-xxx/motoco-base-manual
+install git@github.com:samshi/Motoko-Base-Manual.git at xxx/motoko-base-manual
 
-xxx: node app.js
+xxx/motoko-base-manual: node app.js
 
-open index.html at browser
+open xxx/motoko-base-manual/index.html at browser
