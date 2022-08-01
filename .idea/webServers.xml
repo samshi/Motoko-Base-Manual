@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="559a9267-0387-4712-8c53-6509987883f7" name="hdcafe">
-        <fileTransfer rootFolder="/app/www/hdcafe.com/motoco-base-manual" accessType="SFTP" host="hdcafe.com" port="22" sshConfigId="af35fb83-0144-4b06-bc01-4faafb934513" sshConfig="root@hdcafe.com:22 password">
+      <webServer id="559a9267-0387-4712-8c53-6509987883f7" name="hdcafe" url="http://hdcafe.com/motoko-base-manual">
+        <fileTransfer rootFolder="/app/www/hdcafe.com/motoko-base-manual" accessType="SFTP" host="hdcafe.com" port="22" sshConfigId="af35fb83-0144-4b06-bc01-4faafb934513" sshConfig="root@hdcafe.com:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

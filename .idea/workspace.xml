@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07e421d1-bda5-4cc3-a677-6442550f9a7b" name="Default Changelist" comment="" />
+    <list default="true" id="07e421d1-bda5-4cc3-a677-6442550f9a7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getsamples.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setsample.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +14,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -24,6 +32,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="" />
@@ -49,6 +62,9 @@
       <option name="presentableId" value="Default" />
       <updated>1658436594076</updated>
       <workItem from="1658436595746" duration="3310000" />
+      <workItem from="1658574480741" duration="2515000" />
+      <workItem from="1658629446797" duration="244000" />
+      <workItem from="1659319846086" duration="782000" />
     </task>
     <servers />
   </component>
@@ -59,25 +75,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="220" y="34" key="#Deployment" timestamp="1658436681431">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2951" y="54" key="#Deployment" timestamp="1658575777088">
+      <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="220" y="34" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1658436681431" />
+    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1658575777088" />
+    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.25.2560.1415@2560.0.2560.1440" timestamp="1658575276914" />
     <state x="200" y="17" key="#SSH_Configurations" timestamp="1658436637974">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="200" y="17" key="#SSH_Configurations/0.0.1440.900@0.0.1440.900" timestamp="1658436637974" />
-    <state x="100" y="100" width="1240" height="700" key="DirDiffDialog" timestamp="1658440084613">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="2738" y="160" width="2205" height="1120" key="DirDiffDialog" timestamp="1658578128982">
+      <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DirDiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1658440084613" />
+    <state x="2738" y="160" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1658575656731" />
+    <state x="2738" y="160" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/54.25.2506.1415@2560.0.2560.1440" timestamp="1658578128982" />
     <state x="490" y="365" key="NewPhpFileDialog" timestamp="1658437644234">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="490" y="365" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1658437644234" />
-    <state x="602" y="125" key="ftp.server.browser" timestamp="1658436667715">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="3630" y="200" key="ftp.server.browser" timestamp="1658575772987">
+      <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="602" y="125" key="ftp.server.browser/0.0.1440.900@0.0.1440.900" timestamp="1658436667715" />
+    <state x="3630" y="200" key="ftp.server.browser/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1658575772987" />
+    <state x="3701" y="595" key="publish.login" timestamp="1658574535731">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3701" y="595" key="publish.login/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1658574535731" />
   </component>
 </project>
