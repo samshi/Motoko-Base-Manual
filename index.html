@@ -226,7 +226,7 @@
   function showDetail(){
     window.module = status_data.module
     window.func   = status_data.function
-    $.get('getsamples.php', {
+    $.get('getexamples.php', {
       module,
       func
     }, res => {
@@ -257,12 +257,12 @@
       s += '<h3>related</h3>'
       s += '<pre>' + modules[module].other + '</pre>'
 
-      s += '<h3>add your sample <button onclick="addSample(this)">add</button></h3>'
+      s += '<h3>add your example <button onclick="addSample(this)">add</button></h3>'
       s += '<input id="myname" placeholder="your name" value="' + (localStorage.myname || '') + '"/><br>'
-      s += '<textarea id="mysample"></textarea>'
+      s += '<textarea id="myexample"></textarea>'
 
-      s += '<h3>samples</h3>'
-      s += '<pre id="samples">' + res + '</pre>'
+      s += '<h3>examples</h3>'
+      s += '<pre id="examples">' + res + '</pre>'
 
       functions_detail_node.I(s)
 
@@ -366,18 +366,18 @@
 
   function addSample(node){
     let myname   = document.getElementById('myname').value
-    let mysample = document.getElementById('mysample').value
-    console.log(window.module, window.func, myname, mysample)
+    let myexample = document.getElementById('myexample').value
+    console.log(window.module, window.func, myname, myexample)
     if(myname){
       localStorage.myname = myname
     }
-    $.post('setsample.php', {
+    $.post('setexample.php', {
       module,
       func,
       name  : encodeURIComponent(myname),
-      sample: encodeURIComponent(mysample)
+      example: encodeURIComponent(myexample)
     }, res=>{
-      console.log('setsample res', res)
+      console.log('setexample res', res)
       showDetail()
     })
 
