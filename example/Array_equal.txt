@@ -13,3 +13,4 @@ public func equal(a : [A], b : [A], eq : (A, A) -> Bool) : Bool {
   };
   return true;
 }
+

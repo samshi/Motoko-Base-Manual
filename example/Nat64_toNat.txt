@@ -1,0 +1,13 @@
+
+---------- 2022-08-25 18:57:10 samshi -----------
+type MillisatoshiPerByte = Nat64;
+public func build_transaction(
+    own_public_key : [Nat8],
+    own_address : BitcoinAddress,
+    own_utxos : [Utxo],
+    dst_address : BitcoinAddress,
+    amount : Satoshi,
+    fee_per_byte : MillisatoshiPerByte,
+) : async [Nat8] {
+    let fee_per_byte_nat = Nat64.toNat(fee_per_byte);
+...

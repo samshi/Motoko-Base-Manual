@@ -1,0 +1,5 @@
+
+---------- 2022-08-25 17:43:25 samshi -----------
+type SighashType = Nat32;
+let SIGHASH_ALL : SighashType = 0x01;
+Nat8.fromNat(Nat32.toNat(SIGHASH_ALL))

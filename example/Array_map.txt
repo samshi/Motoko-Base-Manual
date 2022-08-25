@@ -1,0 +1,11 @@
+
+---------- 2022-08-25 17:26:55 samshi -----------
+// from https://github.com/dfinity/examples/blob/master/motoko/basic_bitcoin/src/basic_bitcoin/src/BitcoinWallet.mo
+// Returns the P2PKH address of this canister at the given derivation path.
+public func get_p2pkh_address(network : Network, key_name : Text, derivation_path : [[Nat8]]) : async BitcoinAddress {
+  // Fetch the public key of the given derivation path.
+  let public_key = await EcdsaApi.ecdsa_public_key(key_name, Array.map(derivation_path, Blob.fromArray));
+
+  // Compute the address.
+  public_key_to_p2pkh_address(network, Blob.toArray(public_key))
+};

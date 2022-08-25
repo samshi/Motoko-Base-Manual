@@ -1,0 +1,8 @@
+
+---------- 2022-08-25 17:41:35 samshi -----------
+//https://github.com/dfinity/examples/blob/master/motoko/basic_bitcoin/src/basic_bitcoin/src/BitcoinWallet.mo
+
+for (i in Iter.range(0, transaction.txInputs.size() - 1)) {
+    let sighash = transaction.createSignatureHash(
+        scriptPubKey, Nat32.fromIntWrap(i), SIGHASH_ALL);
+...

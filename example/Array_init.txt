@@ -1,0 +1,7 @@
+
+---------- 2022-08-25 17:33:18 samshi -----------
+Array.init(10, [])
+---------- 2022-08-25 17:36:57 samshi -----------
+// https://github.com/dfinity/examples/blob/master/motoko/basic_bitcoin/src/basic_bitcoin/src/BitcoinWallet.mo
+
+Blob.fromArray(Array.freeze(Array.init(64, 255)))
