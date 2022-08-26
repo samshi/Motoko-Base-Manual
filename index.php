@@ -5,10 +5,28 @@
   <title>Title</title>
   <style>
       h1 {
-          text-align: center;
           margin-top: 5px;
+          text-align: center;
       }
 
+      .main{
+          margin-left:400px;
+          margin-right: 20px;
+          width:calc(100% - 420px);
+          min-width:588px;
+      }
+
+      pre {
+          width:100%;
+      /*calc(100% - 20px);*/
+          background: #eee;
+          padding: 10px;
+          font-family: monospace;
+          font-size: 18px;
+          overflow: scroll;
+          max-height: 300px;
+          min-width:588px;
+      }
       table {
           margin: 0 20px;
           border-collapse: collapse;
@@ -24,15 +42,10 @@
           /*border-bottom: 1px solid #666;*/
       }
 
-      pre {
-          width: 70%;
-          background: #eee;
-          padding: 10px;
-          font-family: monospace;
-          font-size: 18px;
-          overflow: scroll;
-          max-height: 300px;
+      a{
+        font-size: 14px;
       }
+
 
       button {
           margin-left: 10px;
@@ -104,8 +117,8 @@
   <script src="demos/Array.js"></script>
 </head>
 <body>
-<h1>
-  Motoko Base Manual
+<h1 class="main">
+  Motoko Base Manual <a style="font-size:14px;">updated on 20220826 by <a href="mailto:samshi@hdcafe.com">Sam SHI</a></span>
 </h1>
 <div id="import_page"></div>
 </body>
@@ -144,7 +157,7 @@
     pages_list.map((page, index) => {
       $.C($.body, {
         id: page,
-        L : 30 + index * 200,
+        L : 30 + index * 180,
         T : 20,
         W : 160,
         I : page
@@ -156,8 +169,10 @@
         id: page,
         L : 20,
         T : 50,
-        W : IW - 40,
+        W : 'calc(100% - 40px)',
+        minWidth: '988px',
         H : IH - 70,
+        BD:'1px solid #ccc',
         O : 'scroll'
       }).H()
     })
@@ -179,7 +194,7 @@
     })
 
     window.functions_detail_node = $.C(pages[pages_list[0]], {
-      L: 450,
+      CN: 'main',
       T: 0,
       H: IH - 70,
       O: 'auto'
@@ -198,6 +213,7 @@
           })
         })
 
+        status_data.function = null
         showFunctions(eobj.I_)
 
       })
@@ -214,6 +230,7 @@
     }
 
     functions_list_node.I(s)
+    functions_detail_node.I('')
   }
 
   function selectFunction(node){
@@ -234,10 +251,10 @@
       let s = ''
 
       s += '<h3>' + func + ' desc</h3>'
-      s += '<pre>' + modules[module].functions[func].desc + '</pre>'
+      s += '<pre>' + turnText(modules[module].functions[func].desc) + '</pre>'
 
       s += '<h3>' + func + ' code</h3>'
-      s += '<pre>' + modules[module].functions[func].body + '</pre>'
+      s += '<pre>' + turnText(modules[module].functions[func].body) + '</pre>'
 
       let source = modules[module].test
       let hl     = highLight(source, func)
@@ -248,21 +265,21 @@
         })
       }
       s += '<h3>test ' + hl_btn + '</h3>'
-      s += '<pre id="test">' + addLine(source) + '</pre>'
+      s += '<pre id="test">' + turnText(addLine(source)) + '</pre>'
 
       s += '<h3>' + module + ' import</h3>'
       for(let import_str in modules[module].imports){
         s += '<div>import ' + modules[module].imports[import_str] + ' "' + import_str + '"</div>'
       }
       s += '<h3>related</h3>'
-      s += '<pre>' + modules[module].other + '</pre>'
+      s += '<pre>' + turnText(modules[module].other) + '</pre>'
 
       s += '<h3>add your example <button onclick="addSample(this)">add</button></h3>'
       s += '<input id="myname" placeholder="your name" value="' + (localStorage.myname || '') + '"/><br>'
       s += '<textarea id="myexample"></textarea>'
 
       s += '<h3>examples</h3>'
-      s += '<pre id="examples">' + res + '</pre>'
+      s += '<pre id="examples">' + turnText(res) + '</pre>'
 
       functions_detail_node.I(s)
 
@@ -271,6 +288,10 @@
       }
     })
 
+  }
+
+  function turnText(s){
+    return s.replace(/\</g, '&lt').replace(/\>/g, '&gt')
   }
 
   function myTop(top){
@@ -288,7 +309,7 @@
       return len2 - len1
     })
     let import_from_len = import_from_arr.length
-    let s               = '<table>'
+    let s               = '<p/><table>'
     s += '<tr>'
     s += '<th>module</th>'
     s += '<th>import</th>'

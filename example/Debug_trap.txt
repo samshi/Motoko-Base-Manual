@@ -1,0 +1,13 @@
+
+---------- 2022-08-26 16:45:14 samshi -----------
+/// Returns the value of the result and traps with a custom message if there isn't any value to return.
+public func get_ok_except<T, U>(result : Result<T, U>, expect : Text) : T {
+    switch result {
+        case (#ok value)
+            value;
+        case (#err error) {
+            Debug.print("pattern failed");
+            Debug.trap(expect);
+        };
+    }
+};

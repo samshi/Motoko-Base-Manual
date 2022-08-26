@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07e421d1-bda5-4cc3-a677-6442550f9a7b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demos/Array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/getexamples.php" beforeDir="false" afterPath="$PROJECT_DIR$/getexamples.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Iter.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Iter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Array_equal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/Array_equal.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setexample.php" beforeDir="false" afterPath="$PROJECT_DIR$/setexample.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Array_equal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/Array_equal.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +13,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,11 +31,15 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="2CGl2JeQMLAXl3YWfHy2hRvBCrw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -74,7 +77,8 @@
       <workItem from="1659319846086" duration="941000" />
       <workItem from="1659355335942" duration="566000" />
       <workItem from="1659583827909" duration="598000" />
-      <workItem from="1661425446021" duration="8388000" />
+      <workItem from="1661425446021" duration="10210000" />
+      <workItem from="1661499815436" duration="4992000" />
     </task>
     <servers />
   </component>
@@ -82,12 +86,12 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2951" y="54" key="#Deployment" timestamp="1661426846970">
+    <state x="2951" y="54" key="#Deployment" timestamp="1661446607280">
       <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="220" y="34" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1658436681431" />
     <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661426846970" />
-    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.25.2560.1415@2560.0.2560.1440" timestamp="1658575276914" />
+    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.25.2560.1415@2560.0.2560.1440" timestamp="1661446607280" />
     <state x="200" y="17" key="#SSH_Configurations" timestamp="1658436637974">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -97,13 +101,15 @@
     </state>
     <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661446420383" />
     <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog/2560.25.2560.1415/50.25.2510.1415@2560.25.2560.1415" timestamp="1661437554690" />
-    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog" timestamp="1661427187799">
-      <screen x="2560" y="0" width="2560" height="1440" />
+    <state x="2905" y="106" width="2205" height="1101" key="DirDiffDialog" timestamp="1661506105201">
+      <screen x="2560" y="25" width="2560" height="1415" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DirDiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1658440084613" />
-    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661427172742" />
+    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661447914744" />
     <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/52.25.2508.1415@2560.0.2560.1440" timestamp="1661427187799" />
     <state x="2738" y="160" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/54.25.2506.1415@2560.0.2560.1440" timestamp="1658578128982" />
+    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/55.25.2505.1415@2560.0.2560.1440" timestamp="1661447083663" />
+    <state x="2905" y="106" width="2205" height="1101" key="DirDiffDialog/2560.25.2560.1415/54.25.2506.1415@2560.25.2560.1415" timestamp="1661506105201" />
     <state x="490" y="365" key="NewPhpFileDialog" timestamp="1658437644234">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
