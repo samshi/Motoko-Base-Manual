@@ -8,15 +8,15 @@ $folder = "./example";
 $fp = opendir($folder);
 
 //阅读目录
-$models = [];
+$modules = [];
 while(false != $file = readdir($fp)){
   //列出所有文件并去掉'.'和'..'
   if($file != '.' && $file != '..'){
     $a = explode('_', substr($file, 0, -4));
-    if(!$models[$a[0]]){
-      $models[$a[0]] = [];
+    if(!$modules[$a[0]]){
+      $modules[$a[0]] = [];
     }
-    $models[$a[0]][$a[1]] = getNumber($file);
+    $modules[$a[0]][$a[1]] = getNumber($file);
   }
 }
 
@@ -30,7 +30,7 @@ function getNumber($file){
   return count(explode("\n-----", $content))-1;
 }
 
-//showarr($models);
+//showarr($modules);
 //exit();
 
 ?>
@@ -103,6 +103,8 @@ function getNumber($file){
       }
   </style>
   <script>
+    var examples = JSON.parse('<?php echo myJsonEncode($modules); ?>')
+    console.log(examples);
     var modules = {}
     var demos   = {}
   </script>
@@ -187,8 +189,6 @@ function getNumber($file){
 
     selectPage(pages_list[0])
   })
-  // console.log(dependent)
-  // console.log(modules)
 
   function createPages(){
     pages_list.map((page, index) => {
@@ -240,29 +240,46 @@ function getNumber($file){
     for(let module in modules){
       $.c(modules_list_node, {
         id: module,
-        I : module,
+        I : module + moduleExamples(module),
         CS: 'pointer',
       }).down(eobj => {
-        status_data.module = eobj.I_
+        let module = eobj.I_.split(' ')[0]
+        status_data.module = module
         modules_list_node.CHILDREN.map(module_eobj => {
           module_eobj.S({
             color: module_eobj == eobj ? 'red' : ''
           })
         })
 
-        status_data.function = null
-        showFunctions(eobj.I_)
+        status_data.func = null
+        showFunctions(module)
 
       })
     }
   }
 
+  function moduleExamples(module){
+    let sum = 0
+    if(examples[module]){
+      for(let f in examples[module]){
+        sum += examples[module][f]
+      }
+    }
+    if(sum){
+      return ' ('+sum+')'
+    }
+    return ''
+  }
+
   function showFunctions(module){
     var s = ''
     for(let func in modules[module].functions){
-      let color = func == status_data.function ? 'red' : ''
+      let color = func == status_data.func ? 'red' : ''
       s += '<div onclick="selectFunction(this)" style="color:' + color + '">'
       s += func
+      if(examples[module] && examples[module][func]){
+        s += ' (' +examples[module][func]+')'
+      }
       s += '</div>'
     }
 
@@ -271,7 +288,8 @@ function getNumber($file){
   }
 
   function selectFunction(node){
-    status_data.function = node.innerText
+    let func = node.innerText.split(' ')[0]
+    status_data.func = func
     showFunctions(status_data.module)
 
     showDetail()
@@ -279,7 +297,7 @@ function getNumber($file){
 
   function showDetail(){
     window.module = status_data.module
-    window.func   = status_data.function
+    window.func   = status_data.func
     $.get('getexamples.php', {
       module,
       func
