@@ -1,0 +1,15 @@
+
+---------- 2022-08-26 21:34:01 samshi -----------
+public shared (msg) func public_key() : async { #Ok : { public_key: Blob }; #Err : Text } {
+    let caller = Principal.toBlob(msg.caller);
+    try {
+      let { public_key } = await ic.ecdsa_public_key({
+          canister_id = null;
+          derivation_path = [ caller ];
+          key_id = { curve = #secp256k1; name = "dfx_test_key" };
+      });
+      #Ok({ public_key })
+    } catch (err) {
+      #Err(Error.message(err))
+    }
+};

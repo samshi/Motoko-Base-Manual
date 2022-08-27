@@ -1,0 +1,11 @@
+
+---------- 2022-08-26 20:11:39 samshi -----------
+/// Unwraps the value of the option.
+public func unwrap<T>(option : ?T) : T {
+    switch option {
+        case (?value)
+            value;
+        case null
+            Prelude.unreachable();
+    }
+};

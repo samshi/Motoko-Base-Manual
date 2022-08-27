@@ -1,1 +1,1 @@
-modules.IterType={"imports":{},"functions":{"Iter":{"desc":"","body":"public type Iter<T> = { next : () -> ?T };"}},"other":"","test":""}
+modules.IterType={"imports":{},"functions":{"Iter":{"desc":"","body":"public type Iter<T> = { next : () -> ?T };"}},"related":"","test":""}

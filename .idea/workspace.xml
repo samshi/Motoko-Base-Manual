@@ -2,9 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07e421d1-bda5-4cc3-a677-6442550f9a7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/Array_equal.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/Array_equal.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Bool_notEqual.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Float_ceil.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/HashMap_class.get.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Array.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Array.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/AssocList.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/AssocList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Blob.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Blob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Bool.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Bool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Buffer.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Buffer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/CertifiedData.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CertifiedData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Char.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Char.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Deque.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Deque.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ExperimentalCycles.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ExperimentalCycles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ExperimentalInternetComputer.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ExperimentalInternetComputer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ExperimentalStableMemory.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ExperimentalStableMemory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Float.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Float.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Func.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Func.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Hash.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Hash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/HashMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/HashMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Heap.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Heap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Int.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Int.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Int16.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Int16.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Int32.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Int32.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Int64.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Int64.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Int8.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Int8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Iter.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Iter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/IterType.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/IterType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Nat.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Nat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Nat16.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Nat16.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Nat32.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Nat32.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Nat64.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Nat64.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Nat8.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Nat8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/None.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/None.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Option.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Option.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Prelude.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Prelude.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Principal.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Principal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/RBTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/RBTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Random.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Random.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Stack.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Stack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Text.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Time.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Time.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Trie.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Trie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/TrieMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/TrieMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/TrieSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/TrieSet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setexample.php" beforeDir="false" afterPath="$PROJECT_DIR$/setexample.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +131,9 @@
       <workItem from="1659583827909" duration="598000" />
       <workItem from="1661425446021" duration="10210000" />
       <workItem from="1661499815436" duration="4992000" />
+      <workItem from="1661522092957" duration="250000" />
+      <workItem from="1661522507366" duration="4459000" />
+      <workItem from="1661569078838" duration="4076000" />
     </task>
     <servers />
   </component>
@@ -86,30 +141,31 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2951" y="54" key="#Deployment" timestamp="1661446607280">
+    <state x="2951" y="54" key="#Deployment" timestamp="1661527678035">
       <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="220" y="34" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1658436681431" />
-    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661426846970" />
+    <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661527678035" />
     <state x="2951" y="54" key="#Deployment/2560.0.2560.1440/0.25.2560.1415@2560.0.2560.1440" timestamp="1661446607280" />
     <state x="200" y="17" key="#SSH_Configurations" timestamp="1658436637974">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="200" y="17" key="#SSH_Configurations/0.0.1440.900@0.0.1440.900" timestamp="1658436637974" />
-    <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog" timestamp="1661446420383">
+    <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog" timestamp="1661527678368">
       <screen x="2560" y="0" width="2560" height="1440" />
     </state>
-    <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661446420383" />
+    <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661527678368" />
     <state x="2660" y="100" width="2360" height="1240" key="DiffContextDialog/2560.25.2560.1415/50.25.2510.1415@2560.25.2560.1415" timestamp="1661437554690" />
-    <state x="2905" y="106" width="2205" height="1101" key="DirDiffDialog" timestamp="1661506105201">
-      <screen x="2560" y="25" width="2560" height="1415" />
+    <state x="2817" y="116" width="2205" height="1120" key="DirDiffDialog" timestamp="1661581572193">
+      <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DirDiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1658440084613" />
-    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661447914744" />
-    <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/52.25.2508.1415@2560.0.2560.1440" timestamp="1661427187799" />
+    <state x="2817" y="116" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661527882987" />
+    <state x="2817" y="116" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/52.25.2508.1415@2560.0.2560.1440" timestamp="1661581572193" />
     <state x="2738" y="160" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/54.25.2506.1415@2560.0.2560.1440" timestamp="1658578128982" />
     <state x="2915" y="320" width="2205" height="1120" key="DirDiffDialog/2560.0.2560.1440/55.25.2505.1415@2560.0.2560.1440" timestamp="1661447083663" />
     <state x="2905" y="106" width="2205" height="1101" key="DirDiffDialog/2560.25.2560.1415/54.25.2506.1415@2560.25.2560.1415" timestamp="1661506105201" />
+    <state x="2905" y="106" width="2205" height="1101" key="DirDiffDialog/2560.25.2560.1415/55.25.2505.1415@2560.25.2560.1415" timestamp="1661522380724" />
     <state x="490" y="365" key="NewPhpFileDialog" timestamp="1658437644234">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -123,5 +179,9 @@
       <screen x="2560" y="0" width="2560" height="1440" />
     </state>
     <state x="3701" y="595" key="publish.login/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1658574535731" />
+    <state x="3590" y="551" key="scopes" timestamp="1661527285315">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3590" y="551" key="scopes/2560.0.2560.1440/0.0.2560.1440@2560.0.2560.1440" timestamp="1661527285315" />
   </component>
 </project>

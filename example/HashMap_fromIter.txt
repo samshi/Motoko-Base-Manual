@@ -1,0 +1,11 @@
+
+---------- 2022-08-26 21:48:37 samshi -----------
+system func postupgrade() {
+    balances := HashMap.fromIter<Principal, Nat>(balanceEntries.vals(), 1, Principal.equal, Principal.hash);
+    balanceEntries := [];
+    for ((k, v) in allowanceEntries.vals()) {
+        let allowed_temp = HashMap.fromIter<Principal, Nat>(v.vals(), 1, Principal.equal, Principal.hash);
+        allowances.put(k, allowed_temp);
+    };
+    allowanceEntries := [];
+};

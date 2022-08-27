@@ -21,15 +21,15 @@ for(let i = 0, l = files.length; i < l; i++){
   file_content     = file_content.toString();
   let module       = files[i].slice(0, -3)
 
-  if(module != 'Iter'){
+  if(module != 'Principal'){
     // continue
   }
   console.log(i, module)
-  let [functions, other] = getFunctions(file_content)
+  let [functions, related] = getFunctions(file_content)
   modules[module]        = {
     imports: getImports(file_content),
     functions,
-    other,
+    related,
     test   : getTest(module)
   }
 
@@ -121,8 +121,8 @@ function getFunctions(file_content){
     // console.log(77)
   }
 
-  let other = functions_str
-    .replace(/^[;\n]+$/g, '')
+  let related = functions_str
+    .replace(/^[;\n\s]+/g, '')
     .replace(/\n;/g, '')
     .replace(/\n{2,}/g, '\n')
 
@@ -130,12 +130,13 @@ function getFunctions(file_content){
     .replace(/[;\/]+\n/g, ';\n')
     .trim()
     .replace(/^\/$/g, '')
-    .replace(/^[;\n]+$/g, '')
+    .replace(/^[;\n\s]+/g, '')
+    .replace(/^\/$/g, '')
     .replace(/\n;/g, '')
 
   console.log('------------------')
-  console.log(other)
-  return [functions, other]
+  console.log(related)
+  return [functions, related]
 }
 
 function getTest(module){
