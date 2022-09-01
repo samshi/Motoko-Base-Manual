@@ -56,8 +56,10 @@ file_put_contents($lFile, $str, FILE_APPEND);
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <link type="text/css" rel="styleSheet"  href="css/index.css" />
+  <title>Motoko Base Manual</title>
+  <meta name="keywords" content="motoko, base, dfinity, icp">
+  <meta name="description" content="it's a supernova project and voted by many developers. The website includes 100+ sample code files now, and all common functions have examples. To learn motoko easier, just visit the website">
+  <link type="text/css" rel="styleSheet" href="css/index.css" />
   <script>
     var count = <?php echo file_get_contents($cFile); ?>;
     var examples = JSON.parse('<?php echo myJsonEncode($modules); ?>');
