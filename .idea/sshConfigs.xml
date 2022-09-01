@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig authType="OPEN_SSH" host="hdcafe.com" id="af35fb83-0144-4b06-bc01-4faafb934513" port="22" nameFormat="DESCRIPTIVE" username="root" />
-      <sshConfig authType="OPEN_SSH" host="motoko-base-manual.hdcafe.com" id="236c1f4b-dcc1-4b16-b6e3-4f690e801d75" port="22" nameFormat="DESCRIPTIVE" username="root" />
-    </configs>
-  </component>
-</project>
