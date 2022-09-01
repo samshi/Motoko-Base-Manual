@@ -1,0 +1,8 @@
+
+---------- 2022-08-27 20:22:45 samshi -----------
+/// Lists all accounts
+public query func list_accounts() : async [Types.Account] {
+    Iter.toArray(
+        Iter.map(Trie.iter(accounts),
+            func ((owner : Principal, tokens : Types.Tokens)) : Types.Account = { owner; tokens }))
+};

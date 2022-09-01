@@ -1,0 +1,14 @@
+
+---------- 2022-08-27 20:31:34 samshi -----------
+// https://github.com/dfinity/examples/blob/master/motoko/basic_dao/src/Main.mo
+/// Only callable via proposal execution
+public shared({caller}) func update_system_params(payload: Types.UpdateSystemParamsPayload) : async () {
+    if (caller != Principal.fromActor(Self)) {
+        return;
+    };
+    system_params := {
+        transfer_fee = Option.get(payload.transfer_fee, system_params.transfer_fee);
+        proposal_vote_threshold = Option.get(payload.proposal_vote_threshold, system_params.proposal_vote_threshold);
+        proposal_submission_deposit = Option.get(payload.proposal_submission_deposit, system_params.proposal_submission_deposit);
+    };
+};

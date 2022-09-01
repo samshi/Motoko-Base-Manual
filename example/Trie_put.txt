@@ -1,0 +1,6 @@
+
+---------- 2022-08-27 20:42:44 samshi -----------
+// https://github.com/dfinity/examples/blob/master/motoko/basic_dao/src/Main.mo
+func account_put(id : Principal, tokens : Types.Tokens) {
+    accounts := Trie.put(accounts, Types.account_key(id), Principal.equal, tokens).0;
+};

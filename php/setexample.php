@@ -3,7 +3,7 @@ $module = $_POST['module'];
 $func = $_POST['func'];
 $name = urldecode($_POST['name']);
 $example = urldecode($_POST['example']);
-$file = 'example/'.$module.'_'.$func.'.txt';
+$file = '../example/'.$module.'_'.$func.'.txt';
 $content = "\n---------- ".date('Y-m-d H:i:s').' '.$name." -----------";
 $content .= "\n".$example;
 

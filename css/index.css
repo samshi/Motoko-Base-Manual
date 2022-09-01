@@ -1,0 +1,111 @@
+h1 {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.main {
+    margin-left: 250px;
+    margin-right: 20px;
+    width: calc(100% - 470px);
+    min-width: 538px;
+    padding-left: 200px;
+    padding-bottom: 50px;
+}
+
+table {
+    margin: 0 20px;
+    border-collapse: collapse;
+    border-spacing: 1px;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 1px 5px;
+}
+
+a {
+    font-size: 16px;
+    text-decoration: none;
+    line-height:24px;
+}
+a:link {
+    color: #666;
+}
+a:visited {
+    color: #666;
+}
+a:hover {
+    color: blueviolet;
+}
+a:active {
+    color: brown;
+}
+
+button {
+    margin-left: 10px;
+}
+
+input {
+    display:block;
+    padding: 5px;
+    width: 30%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    padding: 5px;
+    width: calc(100% - 20px);
+    height: 200px;
+    font-size: 16px;
+}
+
+pre {
+    width: calc(100% - 20px);
+    background: #f3f3f3;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 16px;
+    overflow: scroll;
+    max-height: 300px;
+    min-width: 588px;
+}
+
+.code {
+    font-family: monospace;
+    width: calc(100% - 20px);
+    background: #f3f3f3;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 16px;
+    overflow: scroll;
+    max-height: 240px;
+    white-space: nowrap;
+}
+
+.code span {
+    background: yellow;
+}
+.index{
+    font-family: monospace;
+}
+#statistic, #filelist{
+    margin: 30px auto 0;
+    font-size: 16px;
+    width:100%;
+}
+
+#statistic td{
+    padding:10px;
+    font-family: monospace;
+}
+
+#filelist{
+    height:calc(100% - 350px);
+    padding:20px;
+    overflow: scroll;
+}
+
+#url{
+    width: calc(100% - 20px);
+}

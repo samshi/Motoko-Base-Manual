@@ -1,0 +1,14 @@
+
+---------- 2022-08-27 20:24:03 samshi -----------
+/// Lists all accounts
+public query func list_accounts() : async [Types.Account] {
+    Iter.toArray(
+        Iter.map(Trie.iter(accounts),
+            func ((owner : Principal, tokens : Types.Tokens)) : Types.Account = { owner; tokens }))
+};
+---------- 2022-08-27 20:37:19 samshi -----------
+// https://github.com/dfinity/examples/blob/master/motoko/basic_dao/src/Main.mo
+/// Return the list of all proposals
+public query func list_proposals() : async [Types.Proposal] {
+    Iter.toArray(Iter.map(Trie.iter(proposals), func (kv : (Nat, Types.Proposal)) : Types.Proposal = kv.1))
+};

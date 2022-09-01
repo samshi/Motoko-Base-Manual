@@ -1,11 +1,10 @@
 'use strict'
 let fs   = require("fs");
-var path = require('path');
-var exec = require('child_process').exec;
 
-const root       = "../motoko-base"
+const root       = "../../motoko-base"
 const src_dir    = root + '/src'
 const test_dir   = root + '/test'
+const target     = '../demos'
 let modules_list = fs.readdirSync(src_dir);
 let files        = []
 modules_list.map(file => {
@@ -20,23 +19,23 @@ for(let i = 0, l = files.length; i < l; i++){
   let file_content = fs.readFileSync(src_dir + '/' + files[i]);
   file_content     = file_content.toString();
   let module       = files[i].slice(0, -3)
+
+  if(module != 'Principal'){
+    // continue
+  }
   console.log(i, module)
   let [functions, related] = getFunctions(file_content)
-  modules[module]        = {
+  modules[module]          = {
     imports: getImports(file_content),
     functions,
     related,
     test   : getTest(module)
   }
 
-  let file = 'modules/' + module + '.js'
+  let file = target + '/' + module + '.js'
 
-  if(1 || !fs.existsSync(file)){
-    fs.writeFileSync(file, 'modules.' + module + '=' + JSON.stringify(modules[module]))
-    console.log(file, 'replaced')
-  }
-  else{
-  }
+  fs.writeFileSync(file, 'modules.' + module + '=' + JSON.stringify(modules[module]))
+  console.log(file, 'replaced')
 }
 
 // console.log(modules)

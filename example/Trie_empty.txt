@@ -1,0 +1,10 @@
+
+---------- 2022-08-27 17:15:12 samshi -----------
+//https://github.com/dfinity/examples/blob/master/motoko/basic_dao/src/Main.mo
+public func accounts_fromArray(arr: [Account]) : Trie.Trie<Principal, Tokens> {
+    var s = Trie.empty<Principal, Tokens>();
+    for (account in arr.vals()) {
+        s := Trie.put(s, account_key(account.owner), Principal.equal, account.tokens).0;
+    };
+    s
+};

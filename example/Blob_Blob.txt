@@ -4,3 +4,6 @@ public type ECDSAPublicKeyReply = {
     public_key : Blob;
     chain_code : Blob;
 };
+
+---------- 2022-08-30 09:38:48 aaa -----------
+aa

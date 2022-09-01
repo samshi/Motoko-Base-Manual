@@ -1,0 +1,6 @@
+
+---------- 2022-08-27 20:19:17 samshi -----------
+//https://github.com/dfinity/examples/blob/master/motoko/basic_dao/src/Main.mo
+stable var accounts = Types.accounts_fromArray(init.accounts);
+func account_key(t: Principal) : Trie.Key<Principal> = { key = t; hash = Principal.hash t };
+func account_get(id : Principal) : ?Types.Tokens = Trie.get(accounts, account_key(id), Principal.equal);

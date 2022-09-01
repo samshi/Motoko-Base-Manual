@@ -100,5 +100,5 @@ function getNumber($file){
 <div id="import_page"></div>
 </body>
 </html>
-<script src="js/index.js"></script>
+<script src="js/index2.js"></script>
 

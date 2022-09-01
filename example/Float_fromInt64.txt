@@ -1,15 +1,7 @@
-# Motoko-Base-Manual
 
-install php
-
-install git@github.com:dfinity/motoko-base.git at xxx/motoko-base
-
-install git@github.com:samshi/Motoko-Base-Manual.git at xxx/motoko-base-manual
-
-xxx/motoko-base-manual: node app.js
-
-open xxx/motoko-base-manual/ at browser
-
+---------- 2022-08-29 15:59:02 samshi -----------
+//https://forum.dfinity.org/t/floats-from-bytes-in-motoko/14595
+//convert a byte array to a Float (16, 32 and 64 bit)
 public func decodeFloat(bytes: [Nat8]) : ?Float {
     var bits: Nat64 = Binary.BigEndian.toNat64(bytes);
     let (exponentBitLength: Nat64, mantissaBitLength: Nat64) = switch(bytes.size()) {
