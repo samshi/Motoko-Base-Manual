@@ -29,9 +29,27 @@ function getNumber($file){
   return count(explode("\n-----", $content))-1;
 }
 
-//showarr($modules);
-//exit();
+//count
+$cFile="log/count.txt";
+if(file_exists($cFile)){
+  $str=file_get_contents($cFile);
+  $count=trim($str);
+  $count++;
+}else{
+  $count=1;
+}
+file_put_contents($cFile, $count);
 
+//log
+$lFile="log/log.txt";
+$str = getIndex($_SERVER, 'REQUEST_TIME').' '.getIndex($_SERVER, 'REMOTE_ADDR').' "'.getIndex($_SERVER, 'HTTP_USER_AGENT').'"'."\n";
+file_put_contents($lFile, $str, FILE_APPEND);
+
+//if(!isset($_COOKIE['acctime'])){
+//$acctime=time();
+//  setcookie("acctime", $acctime, time() + 3600 * 24);
+//  $first = true;
+//}
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +59,8 @@ function getNumber($file){
   <title>Title</title>
   <link type="text/css" rel="styleSheet"  href="css/index.css" />
   <script>
-    var examples = JSON.parse('<?php echo myJsonEncode($modules); ?>')
+    var count = <?php echo file_get_contents($cFile); ?>;
+    var examples = JSON.parse('<?php echo myJsonEncode($modules); ?>');
     var modules = {}
     // var demos   = {}
   </script>
@@ -95,7 +114,7 @@ function getNumber($file){
 </head>
 <body>
 <h1 class="main">
-  Motoko Base Manual <a style="font-size:14px;">updated on 20220831 by <a href="mailto:samshi@hdcafe.com">Sam SHI</a></span>
+  Motoko Base Manual <span style="font-size:14px;">updated on 20220901 by <a href="mailto:samshi@hdcafe.com">Sam SHI</a></span>
 </h1>
 <div id="import_page"></div>
 </body>
