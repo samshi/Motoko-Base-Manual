@@ -116,7 +116,7 @@ file_put_contents($lFile, $str, FILE_APPEND);
 </head>
 <body>
 <h1 class="main">
-  Motoko Base Manual <span style="font-size:14px;">updated on 20220901 by <a href="mailto:samshi@hdcafe.com">Sam SHI</a></span>
+  Motoko Base Manual <span style="font-size:14px;">updated on 20221023 by <a href="mailto:samshi@hdcafe.com">Sam SHI</a></span>
 </h1>
 <div id="import_page"></div>
 </body>
