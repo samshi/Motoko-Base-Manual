@@ -66,53 +66,56 @@ file_put_contents($lFile, $str, FILE_APPEND);
     var modules = {}
     // var demos   = {}
   </script>
-  <script src="js/myjq.js"></script>
-  <script src="modules/Array.js"></script>
-  <script src="modules/AssocList.js"></script>
-  <script src="modules/Blob.js"></script>
-  <script src="modules/Bool.js"></script>
-  <script src="modules/Buffer.js"></script>
-  <script src="modules/CertifiedData.js"></script>
-  <script src="modules/Char.js"></script>
-  <script src="modules/Debug.js"></script>
-  <script src="modules/Deque.js"></script>
-  <script src="modules/Error.js"></script>
-  <script src="modules/ExperimentalCycles.js"></script>
-  <script src="modules/ExperimentalInternetComputer.js"></script>
-  <script src="modules/ExperimentalStableMemory.js"></script>
-  <script src="modules/Float.js"></script>
-  <script src="modules/Func.js"></script>
-  <script src="modules/Hash.js"></script>
-  <script src="modules/HashMap.js"></script>
-  <script src="modules/Heap.js"></script>
-  <script src="modules/Int.js"></script>
-  <script src="modules/Int16.js"></script>
-  <script src="modules/Int32.js"></script>
-  <script src="modules/Int64.js"></script>
-  <script src="modules/Int8.js"></script>
-  <script src="modules/Iter.js"></script>
-  <script src="modules/IterType.js"></script>
-  <script src="modules/List.js"></script>
-  <script src="modules/Nat.js"></script>
-  <script src="modules/Nat16.js"></script>
-  <script src="modules/Nat32.js"></script>
-  <script src="modules/Nat64.js"></script>
-  <script src="modules/Nat8.js"></script>
-  <script src="modules/None.js"></script>
-  <script src="modules/Option.js"></script>
-  <script src="modules/Order.js"></script>
-  <script src="modules/Prelude.js"></script>
-  <script src="modules/Principal.js"></script>
-  <script src="modules/RBTree.js"></script>
-  <script src="modules/Random.js"></script>
-  <script src="modules/Result.js"></script>
-  <script src="modules/Stack.js"></script>
-  <script src="modules/Text.js"></script>
-  <script src="modules/Time.js"></script>
-  <script src="modules/Trie.js"></script>
-  <script src="modules/TrieMap.js"></script>
-  <script src="modules/TrieSet.js"></script>
-  <script src="motoko/allin1.js"></script>
+  <?php
+  showJS('js/myjq.js');
+  showJS('modules/Array.js');
+  showJS('modules/AssocList.js');
+  showJS('modules/Blob.js');
+  showJS('modules/Bool.js');
+  showJS('modules/Buffer.js');
+  showJS('modules/CertifiedData.js');
+  showJS('modules/Char.js');
+  showJS('modules/Debug.js');
+  showJS('modules/Deque.js');
+  showJS('modules/Error.js');
+  showJS('modules/ExperimentalCycles.js');
+  showJS('modules/ExperimentalInternetComputer.js');
+  showJS('modules/ExperimentalStableMemory.js');
+  showJS('modules/Float.js');
+  showJS('modules/Func.js');
+  showJS('modules/Hash.js');
+  showJS('modules/HashMap.js');
+  showJS('modules/Heap.js');
+  showJS('modules/Int.js');
+  showJS('modules/Int16.js');
+  showJS('modules/Int32.js');
+  showJS('modules/Int64.js');
+  showJS('modules/Int8.js');
+  showJS('modules/Iter.js');
+  showJS('modules/IterType.js');
+  showJS('modules/List.js');
+  showJS('modules/Nat.js');
+  showJS('modules/Nat16.js');
+  showJS('modules/Nat32.js');
+  showJS('modules/Nat64.js');
+  showJS('modules/Nat8.js');
+  showJS('modules/None.js');
+  showJS('modules/Option.js');
+  showJS('modules/Order.js');
+  showJS('modules/Prelude.js');
+  showJS('modules/Principal.js');
+  showJS('modules/RBTree.js');
+  showJS('modules/Random.js');
+  showJS('modules/Result.js');
+  showJS('modules/Stack.js');
+  showJS('modules/Text.js');
+  showJS('modules/Time.js');
+  showJS('modules/Trie.js');
+  showJS('modules/TrieMap.js');
+  showJS('modules/TrieSet.js');
+  showJS('motoko/allin1.js');
+  ?>
+
 </head>
 <body>
 <h1 class="main">
@@ -121,5 +124,8 @@ file_put_contents($lFile, $str, FILE_APPEND);
 <div id="import_page"></div>
 </body>
 </html>
-<script src="js/index.js"></script>
+<?php
+showJS('js/index.js');
+?>
+
 
