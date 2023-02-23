@@ -19,5 +19,5 @@ xxx/motoko-base-manual/node: node modules.js
 upgrade sample files
 xxx/motoko-base-manual/node: node motoko.js
 
-open http://yourdomain/motoko-base-manual/ at browser
+upload all files and directories to webserver
 
